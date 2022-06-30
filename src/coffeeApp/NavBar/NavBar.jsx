@@ -20,7 +20,7 @@ export default function NavBar() {
 
                     </ul>
                 </nav>
-                <b className='cart__number'>Cart <span>0</span></b>
+                <b className='login'>Login</b>
             </header>
 
         </>

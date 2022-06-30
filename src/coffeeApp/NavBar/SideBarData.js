@@ -10,5 +10,10 @@ export const SideBarData = [
 	{
 		title: 'Menu',
 		path: '/menu'
-	}
+	},
+	{
+		title: 'Cart',
+		path: '/cart'
+	},
+
 ]

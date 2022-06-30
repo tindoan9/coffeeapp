@@ -2,3 +2,76 @@
 	width: 100%;
 	transform: translate(0, -60px);
 }
+.title{
+	width: 500px;
+	transform: translate(40px, -600px);
+}
+.title h1{
+	font-size: 60px;
+}
+.title h3{
+	margin-bottom: 30px;
+}
+.btn-41,
+.btn-41 *,
+.btn-41 :after,
+.btn-41 :before,
+.btn-41:after,
+.btn-41:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-41 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #A27B5C;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#A27B5C, #fff);
+  padding: 0;
+}
+.btn-41:disabled {
+  cursor: default;
+}
+.btn-41:-moz-focusring {
+  outline: auto;
+}
+.btn-41 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-41 [hidden] {
+  display: none;
+}
+.btn-41 {
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 0.7rem 2rem;
+  position: relative;
+  /* text-transform: uppercase; */
+}
+.btn-41 span {
+  mix-blend-mode: difference;
+}
+.btn-41:before {
+  background: #fff;
+  border-radius: 999px;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transition: transform 0.2s;
+}
+.btn-41:hover:before {
+  transform: scale(0.7);
+}
