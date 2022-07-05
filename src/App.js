@@ -1,5 +1,5 @@
 import './App.css';
-import { CoffeeApp } from './coffeeApp/CoffeeApp';
+import { CoffeeApp } from './components/CoffeeApp';
 
 function App() {
   return (

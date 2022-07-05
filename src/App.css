@@ -1,2 +1,7 @@
-@import url('./coffeeApp/NavBar/style.css');
-@import url('./coffeeApp/NavBar/pages/HomePage/style.css');
+@import url('./components/NavBar/style.css');
+@import url('./components/NavBar/pages/HomePage/style.css');
+@import url('./components/NavBar/pages/HomePage/ListProduct/style.css');
+@import url('./components/NavBar/pages/HomePage/Footer/style.css');
+@import url('./components/NavBar/pages/DetailCoffee/style.css');
+@import url('./components/NavBar/pages/Login/style.css');
+@import url('./components/NavBar/pages/Cart/style.css');
