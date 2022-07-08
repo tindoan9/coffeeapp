@@ -1,0 +1,6 @@
+.profile__member{
+	transform: translate(0, 180px);
+}
+.profile__member .info__member h1{
+	text-align: center;
+}

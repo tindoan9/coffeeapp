@@ -3,7 +3,8 @@
 		{
 			"id": 1,
 			"email": "tindoam9@gmail.com",
-			"password": "123123"
+			"password": "123123",
+			"address": "Quang Nam"
 		}
 	],
 	"product": [

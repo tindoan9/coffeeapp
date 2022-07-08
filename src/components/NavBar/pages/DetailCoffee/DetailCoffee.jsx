@@ -38,7 +38,7 @@ export default function DetailCoffee() {
                             </Radio.Group>
                         </div>
                     </div>
-                    <button>Đặt hàng - 31.000đ</button>
+                    <button>Thêm vào giỏ hàng - 31.000đ</button>
                 </div>
             </div>
         </>

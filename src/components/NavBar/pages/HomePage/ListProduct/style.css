@@ -13,7 +13,7 @@
 	padding: 15px;
 	margin: 30px;
 	border-radius: 10px;
-	box-shadow: 0 0 16px 0.001px #333;
+	box-shadow: 0 0 16px 1px rgb(157, 157, 157);
 }
 .list__product .item img{
 	width: 160px;

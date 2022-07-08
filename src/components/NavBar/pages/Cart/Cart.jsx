@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, message, Radio, Space } from 'antd';
+import { useNavigate } from 'react-router-dom'
 import coffee from '../../../../assets/coffee.jpg'
 
 export default function Cart() {
@@ -10,8 +11,10 @@ export default function Cart() {
 		setValue(e.target.value);
 	};
 
+	const navigate = useNavigate()
 	const success = () => {
-		message.success('Chúng tôi sẽ liên hệ sớm đến bạn để xác nhận đơn hàng ^-^', 5);
+		message.success('Đặt hàng thành cộng! Chúng tôi sẽ liên hệ sớm đến bạn ^_^', 5);
+		navigate(`/`)
 	};
 
 	return (
@@ -20,9 +23,8 @@ export default function Cart() {
 			<div className="order">
 				<div className="info__member">
 					<h2>Giao hàng</h2>
-					<input type="text" />
-					<input type="text" />
-					<input type="text" />
+					<input type="text" placeholder='Thêm họ và tên' />
+					<input type="text" placeholder='Thêm số điện thoại' />
 					<input type="text" placeholder='Thêm Địa Chỉ' />
 					<h2>Phương thức thanh toán</h2>
 					<Radio.Group onChange={onChange} value={value}>
