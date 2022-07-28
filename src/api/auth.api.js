@@ -1,5 +1,4 @@
-import {URL_API} from 'Api'
-import {API} from './const.api'
+import {API, URL_API} from './const.api'
 
 export const AuthAPI = {
 	login: (data) => API.post(`${URL_API}/auth/login`, data),

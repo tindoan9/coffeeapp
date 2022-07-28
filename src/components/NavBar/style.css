@@ -19,6 +19,11 @@ header{
 	border-radius: 40px;
 	box-shadow: 5px 50px 90px 0.001px #333;
 	list-style: none;
+	align-items: center;
+	height: 49px;
+}
+.nav__links .active li{
+	color: #EF5B0C;
 }
 .nav__links li{
 	font-size: 18px;
@@ -30,13 +35,13 @@ header{
 .nav__links li a{
 	transition: all 0.3s ease 0s;
 }
-.nav__links li:hover{
+/* .nav__links li:hover{
 	color: #0088a9;
-}
+} */
 .category{
 	display: none;
 	position: absolute;
-	transform: translate(-55px, 0px);
+	transform: translate(-40px, 0px);
 	background-color: #FFFFFF;
 	padding: 20px 10px;
 	border-radius: 20px;

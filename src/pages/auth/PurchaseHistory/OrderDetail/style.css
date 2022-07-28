@@ -1,0 +1,43 @@
+.order__detail{
+    /* width: 900px; */
+
+}
+.order__detail .form__order__detail{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+.order__detail .form__order__detail .product__order__info{
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 1px #999;
+    width: 500px;
+    padding: 20px;
+}
+.order__detail .form__order__detail .product__order__info .order__item{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+.order__detail .form__order__detail .product__order__info img{
+    width: 70px;
+    height: 70px;
+}
+.order__detail .form__order__detail .user__order__info{
+    width: 400px;
+    padding: 50px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 1px #999;
+}
+.order__detail .form__order__detail .user__order__info p{
+    overflow: hidden;
+}
+.order__detail .form__order__detail .user__order__info p span{
+    display: inline-block;
+    width: 100px;
+}
+.order__detail .form__order__detail .user__order__info .handle__order{
+    display: flex;
+    justify-content: space-between;
+}

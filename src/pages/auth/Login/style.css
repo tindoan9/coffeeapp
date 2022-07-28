@@ -1,0 +1,41 @@
+.login__controll{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.form__login{
+	display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 40px 40px;
+    width: 700px;
+    height: auto;
+    box-shadow: 0 0 10px 0.1px #333;
+}
+.form__login h2{
+    text-align: center;
+    font-size: 30px;
+}
+.form__login .form{
+    margin-left: -90px;
+}
+.modal__register{
+    padding: 0 5px;
+    color: #3AB0FF;
+}
+.form__register{
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+}
+.form__register input{
+    margin: 20px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #333;
+}
+.link__register{
+    text-align: center;
+}

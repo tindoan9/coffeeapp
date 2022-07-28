@@ -1,32 +1,64 @@
 import React from 'react'
 import LogoPage from '../../assets/logo-page.png'
-import coffee from '../../assets/coffee.jpg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { BiUserCircle } from 'react-icons/bi';
 import { BsSearch } from 'react-icons/bs';
 import { category } from './category';
-import { Button, Drawer, Dropdown, Menu, Space } from 'antd';
+import { Button, Drawer, Dropdown, Menu, Space, Badge } from 'antd';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { searchProductAction } from '../../stores/slices/product.slice';
+import { getTotalItem } from '../../stores/slices/cart.slice';
 
-const menu = (
-    <Menu
-        items={[
-            {
-                key: '1',
-                label: (
-                    <NavLink to={'/Login'}>
-                        <p target="_blank" rel="noopener noreferrer">
-                            Login
-                        </p>
-                    </NavLink>
-                ),
-            },
-        ]}
-    />
-);
+const unauthenticatedMenu = [
+    {
+        key: '1',
+        label: (
+            <NavLink to={'/Login'}>
+                <p target="_blank" rel="noopener noreferrer">
+                    Đăng nhập
+                </p>
+            </NavLink>
+        )
+    },
+];
+
+const authenticatedMenu = [
+    {
+        key: '2',
+        label: (
+            <NavLink to={'/profile'}>
+                <p target="_blank" rel="noopener noreferrer">
+                    Thông tin tài khoản
+                </p>
+            </NavLink>
+        )
+    },
+    {
+        key: '3',
+        label: (
+            <NavLink to={'/order-list/confirm'}>
+                <p target="_blank" rel="noopener noreferrer">
+                    Lịch sử mua hàng
+                </p>
+            </NavLink>
+        )
+    },
+];
 
 export default function NavBar() {
+    const userInfo = useSelector(state => state.user.userInfoState)
+    const productState = useSelector(state => state.product.productState)
+    const cartState = useSelector(state => state.cart.cartState)
+
+    const cartItem = cartState.cartItem
+    const listCartItem = cartState.cart
+
+    const dispatch = useDispatch()
     const [visible, setVisible] = useState(false);
+    const [menuList, setMenuList] = useState([])
+
     const showDrawer = () => {
         setVisible(true);
     };
@@ -34,7 +66,24 @@ export default function NavBar() {
     const onClose = () => {
         setVisible(false);
     };
+    
+    useEffect(() => {
+        dispatch(getTotalItem())
+    }, [listCartItem])
 
+    useEffect(() => {
+        return !userInfo.data ? setMenuList(unauthenticatedMenu) : setMenuList(authenticatedMenu)
+    }, [userInfo])
+
+    const handleSearchChange = (keyword) => {
+        const values = keyword.target.value
+        dispatch(searchProductAction(values))
+    }
+
+    const navigate = useNavigate()
+    const handleCoffeeDetail = (item) => {
+        navigate(`/product-detail/${item.id}`, { state: { ...item } })
+    }
 
     return (
         <>
@@ -43,9 +92,9 @@ export default function NavBar() {
                 <nav className='nav__links'>
                     <ul>
                         <NavLink to={'/'}>
-                            <li>Home</li>
+                            <li>Trang chủ</li>
                         </NavLink>
-                        <li className='menu'>Menu
+                        <li className='menu'>Sản phẩm
                             <ul className='category'>
                                 {category.map((item, index) => <NavLink to={item.path} key={index}>
                                     <li>{item.title}</li>
@@ -53,7 +102,9 @@ export default function NavBar() {
                             </ul>
                         </li>
                         <NavLink to={'/cart'}>
-                            <li>Cart</li>
+                            <Badge count={cartItem}>
+                                <li>Giỏ hàng</li>
+                            </Badge>
                         </NavLink>
                     </ul>
                 </nav>
@@ -70,17 +121,26 @@ export default function NavBar() {
                         <BsSearch />
                     </Button>
                     <Drawer title="Search" placement="right" onClose={onClose} visible={visible}>
-                        <input type="Search" placeholder='Nhập tên sản phẩm' className='search__input' />
-                        <div className="product__listing">
-                            <img src={coffee} alt="" />
-                            <p>Name Product</p>
-                            <span>19.000đ</span>
-                        </div>
+                        <input
+                            type="Search"
+                            onChange={handleSearchChange}
+                            placeholder='Nhập tên sản phẩm'
+                            className='search__input' />
+                        {(productState?.search ?? []).map?.((item, index) => {
+                            return (
+                                <div onClick={() => handleCoffeeDetail(item)} key={index} className="product__listing">
+                                    <img src={item.image} alt="" />
+                                    <p>{item.productName}</p>
+                                    <span>{item.price}.000đ</span>
+                                </div>
+                            )
+                        })}
+
                     </Drawer>
 
                     <Space direction="vertical">
                         <Space wrap>
-                            <Dropdown overlay={menu} placement="bottom">
+                            <Dropdown overlay={<Menu items={menuList} />} placement="bottom">
                                 <Button style={
                                     {
                                         fontSize: '30px',

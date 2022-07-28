@@ -1,0 +1,24 @@
+.profile__member{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.profile__member .info__member{
+	background-color: #fff;
+	width: 700px;
+	height: auto;
+	align-items: center;
+	padding: 50px 0;
+	box-shadow: 0 0 10px 1px #333;
+}
+.profile__member .info__member h1{
+	text-align: center;
+}
+.btn__logout{
+	border: none;
+	padding: 5px 20px;
+	margin-left: 100px;
+	background-color: #EB4747;
+	color: #fff;
+}

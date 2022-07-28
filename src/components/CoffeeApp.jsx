@@ -1,11 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Cart from '../pages/auth/Cart/Cart';
+import Login from '../pages/auth/Login/Login';
+import Profile from '../pages/auth/Profile/Profile';
+import OrderDetail from '../pages/auth/PurchaseHistory/OrderDetail/OrderDetail';
+import PurchaseHistory from '../pages/auth/PurchaseHistory/PurchaseHistory';
+import Register from '../pages/auth/Register/Register';
+import DetailCoffee from '../pages/DetailCoffee/DetailCoffee';
+import HomePage from '../pages/HomePage/HomePage';
 import NavBar from './NavBar/NavBar';
-import Cart from './NavBar/pages/Cart/Cart';
-import DetailCoffee from './NavBar/pages/DetailCoffee/DetailCoffee';
-import HomePage from './NavBar/pages/HomePage/HomePage';
-import Login from './NavBar/pages/Login/Login';
-import Profile from './NavBar/pages/Profile/Profile';
+
 
 export function CoffeeApp() {
 	return (
@@ -14,10 +18,16 @@ export function CoffeeApp() {
 				<NavBar></NavBar>
 				<Routes>
 					<Route path='/' element={<HomePage></HomePage>}></Route>
-					<Route path='/product-detail' element={<DetailCoffee></DetailCoffee>}></Route>
+					<Route path='/product-detail/:id' element={<DetailCoffee></DetailCoffee>}></Route>
 					<Route path='/Login' element={<Login></Login>}></Route>
 					<Route path='/cart' element={<Cart></Cart>}></Route>
 					<Route path='/profile' element={<Profile></Profile>}></Route>
+					<Route path='/register' element={<Register></Register>}></Route>
+					<Route path='/order-list/detail:id' element={<OrderDetail></OrderDetail>}></Route>
+					<Route path='/order-list/delivering' element={<PurchaseHistory/>}/>
+					<Route path='/order-list/received' element={<PurchaseHistory/>}/>
+					<Route path='/order-list/cancelled' element={<PurchaseHistory/>}/>
+					<Route path='/order-list/confirm' element={<PurchaseHistory/>}/>
 				</Routes>
 			</BrowserRouter>
 		</>
