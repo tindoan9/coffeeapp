@@ -10,6 +10,12 @@ import { v4 } from 'uuid'
 
 const ButtonGroup = Button.Group;
 
+const listSize = [
+    { label: 'Nhỏ', price: 0 },
+    { label: 'Vừa', price: 6 },
+    { label: 'Lớn', price: 10 },
+]
+
 export default function DetailCoffee() {
     const cartAction = useSelector(state => state.cart.cartState)
     const [value, setValue] = useState(0);
@@ -22,7 +28,7 @@ export default function DetailCoffee() {
     const productName = location.state.productName
     const price = location.state.price
     const description = location.state.description
-    const total = price * count + value * count
+    const total = price * count + value.price * count
 
     const increase = () => {
         setCount(count + 1);
@@ -89,9 +95,9 @@ export default function DetailCoffee() {
                         <p>Choose Size</p>
                         <div className="type__size">
                             <Radio.Group onChange={onChange} value={value}>
-                                <Radio value={0}>Nhỏ + 0đ</Radio>
-                                <Radio value={6}>Vừa + 6.000đ</Radio>
-                                <Radio value={10}>Lớn + 10.000đ</Radio>
+                                {listSize.map(item => {
+                                    return <Radio key={item.label} value={item}>{item.label} + {item.price}đ</Radio>
+                                })}
                             </Radio.Group>
                         </div>
                     </div>

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Button, message, notification} from 'antd';
+import { Button, notification} from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { deleteCartItemAction, getTotalBill, paymentAction, removeCartAction } from '../../../stores/slices/cart.slice';
 import { v4 } from 'uuid';
 import EmptyComp from './Empty/Empty';
-import { LoadingOutlined } from "@ant-design/icons";
 import NoUser from './Empty/NoUser';
 
 
@@ -16,21 +15,21 @@ export default function Cart() {
     
     
     const totalBill = cartState.totalBill
-    const listCartItem = cartState.cart
+    const listCartItem = cartState?.cart
     const idUser = userInfo?.data?.id
-    const loading = cartState?.loading
     const current = new Date()
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [size, setSize] = useState('Nhỏ')
     const [infoOrder, setInfoOrder] = useState({
         name: '', phone: '', address: '', status: 'Chờ xác nhận'
     })
 
     useEffect(() => {
         dispatch(getTotalBill())
-    }, [listCartItem, cartState.cart])
+    }, [listCartItem])
 
     const handleDeleteItem = (id) => {
         dispatch(deleteCartItemAction(id))
@@ -60,10 +59,12 @@ export default function Cart() {
         }
         dispatch(paymentAction(newOnlPayment))
         dispatch(removeCartAction(cartState.cart.length))
+        navigate(`/cart/success/${newOnlPayment.id}`)
     }
     
     if(!userInfo?.data) return <NoUser/>
-    if(cartState.cart.length === 0) return <EmptyComp/>
+    if(listCartItem.length === 0) return <EmptyComp/>
+
 
     return (
         <>
@@ -87,7 +88,7 @@ export default function Cart() {
                 </div>
                 <div className="order__product">
                     <h2>Sản phẩm đả chọn</h2>
-                    {cartState?.cart?.map?.((item) => {
+                    {listCartItem?.map?.((item) => {
                         return (
                             <div key={item.id} className="select__product">
                                 <div className="img">
@@ -95,7 +96,7 @@ export default function Cart() {
                                 </div>
                                 <div className="info">
                                     <b><span>{item.count}</span> x {item.productName}</b>
-                                    <p>Size <span>{item.size}</span></p>
+                                    <p>Size <span>{item.size.label}</span></p>
                                     <b onClick={() => handleDeleteItem(item.id)}>Xóa</b>
                                 </div>
                                 <div className="price">
@@ -119,7 +120,7 @@ export default function Cart() {
                             <p>Đơn hàng: <span>{totalBill}.000đ</span></p>
                         </div>
                         <div className="payment__btn">
-                            <Button onClick={() => handleSubmitPayment()}> {loading && (<LoadingOutlined />)} Đặt Hàng</Button>
+                            <Button onClick={() => handleSubmitPayment()}>Đặt Hàng</Button>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ export default function OrderDetail() {
                             return (
                                 <div key={item.id} className="order__item">
                                     <img src={item.image} alt="OT" />
-                                    <p><span>{item.count}</span>x productName <p>Size {item.size}</p></p>
+                                    <p><span>{item.count}</span>x productName <p>Size {item.size.label}</p></p>
                                     <span>{item.total}.000đ</span>
                                 </div>
                             )

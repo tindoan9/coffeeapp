@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cart from '../pages/auth/Cart/Cart';
+import Success from '../pages/auth/Cart/CheckoutSuccess/Success';
 import Login from '../pages/auth/Login/Login';
 import Profile from '../pages/auth/Profile/Profile';
 import OrderDetail from '../pages/auth/PurchaseHistory/OrderDetail/OrderDetail';
@@ -23,6 +24,7 @@ export function CoffeeApp() {
 					<Route path='/cart' element={<Cart></Cart>}></Route>
 					<Route path='/profile' element={<Profile></Profile>}></Route>
 					<Route path='/register' element={<Register></Register>}></Route>
+					<Route path='/cart/success/:id' element={<Success></Success>}></Route>
 					<Route path='/order-list/detail:id' element={<OrderDetail></OrderDetail>}></Route>
 					<Route path='/order-list/delivering' element={<PurchaseHistory/>}/>
 					<Route path='/order-list/received' element={<PurchaseHistory/>}/>
