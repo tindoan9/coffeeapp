@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from 'antd';
+import { notification, Radio } from 'antd';
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Button } from 'antd';
@@ -48,7 +48,12 @@ export default function DetailCoffee() {
     };
 
     const handleAddToCart = (image, productName, total, count, size) => {
-        const cartItem = {
+        if(value === 0){
+            notification.error({
+                message: `Bạn chưa chọn size!`,
+            });    
+        }else{
+            const cartItem = {
             id: v4(),
             idProduct: id,
             image: image,
@@ -56,8 +61,10 @@ export default function DetailCoffee() {
             total: total,
             count: count,
             size: size
-        }
+            }
         dispatch(addToCartAction(cartItem))
+        }
+        
     }
 
     return (
@@ -96,7 +103,7 @@ export default function DetailCoffee() {
                         <div className="type__size">
                             <Radio.Group onChange={onChange} value={value}>
                                 {listSize.map(item => {
-                                    return <Radio key={item.label} value={item}>{item.label} + {item.price}đ</Radio>
+                                    return <Radio key={item.label} value={item}>{item.label} + {item.price}k</Radio>
                                 })}
                             </Radio.Group>
                         </div>
