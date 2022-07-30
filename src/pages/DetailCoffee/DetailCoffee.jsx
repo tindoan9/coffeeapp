@@ -1,8 +1,7 @@
 import React from 'react';
-import { notification, Radio } from 'antd';
+import { notification, Radio, Button} from 'antd';
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Button } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCartAction } from '../../stores/slices/cart.slice';
@@ -68,51 +67,53 @@ export default function DetailCoffee() {
     }
 
     return (
-        <div className='item__detail'>
-            <div className="product__detail">
-                <div className="img__product">
-                    <img src={image} alt="" />
-                    <div className="description__product">
-                        <span>{description}</span>
-                    </div>
-                </div>
-                <div className="options__product">
-                    <h2>{productName}</h2>
-                    <span>{price}.000đ</span>
-                    <div className="option__quantity">
-                        <button className='desc'>
-                            <ButtonGroup>
-                                <Button onClick={decline}>
-                                    <MinusOutlined />
-                                </Button>
-                            </ButtonGroup>
-                        </button>
-                        <span>{count}</span>
-                        <button className='asc'>
-                            <ButtonGroup>
-                                <Button
-                                    onClick={increase}
-                                >
-                                    <PlusOutlined />
-                                </Button>
-                            </ButtonGroup>
-                        </button>
-                    </div>
-                    <div className="option__size">
-                        <p>Choose Size</p>
-                        <div className="type__size">
-                            <Radio.Group onChange={onChange} value={value}>
-                                {listSize.map(item => {
-                                    return <Radio key={item.label} value={item}>{item.label} + {item.price}k</Radio>
-                                })}
-                            </Radio.Group>
+        <>
+            <div className='item__detail'>
+                <div className="product__detail">
+                    <div className="img__product">
+                        <img src={image} alt="" />
+                        <div className="description__product">
+                            <span>{description}</span>
                         </div>
                     </div>
-                    <button onClick={() => handleAddToCart(image, productName, total, count, value)}
-                    >Thêm vào giỏ hàng - {total}.000đ
-                    </button>
+                    <div className="options__product">
+                        <h2>{productName}</h2>
+                        <span>{price}.000đ</span>
+                        <div className="option__quantity">
+                            <button className='desc'>
+                                <ButtonGroup>
+                                    <Button onClick={decline}>
+                                        <MinusOutlined />
+                                    </Button>
+                                </ButtonGroup>
+                            </button>
+                            <span>{count}</span>
+                            <button className='asc'>
+                                <ButtonGroup>
+                                    <Button
+                                        onClick={increase}
+                                    >
+                                        <PlusOutlined />
+                                    </Button>
+                                </ButtonGroup>
+                            </button>
+                        </div>
+                        <div className="option__size">
+                            <p>Choose Size</p>
+                            <div className="type__size">
+                                <Radio.Group onChange={onChange} value={value}>
+                                    {listSize.map(item => {
+                                        return <Radio key={item.label} value={item}>{item.label} + {item.price}k</Radio>
+                                    })}
+                                </Radio.Group>
+                            </div>
+                        </div>
+                        <button onClick={() => handleAddToCart(image, productName, total, count, value)}
+                        >Thêm vào giỏ hàng - {total}.000đ
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
