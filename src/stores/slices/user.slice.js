@@ -41,7 +41,7 @@ const userSlice = createSlice({
         },
         loginActionFailed(state, action) {
             notification.error({
-                message: `Login Failed: ${action.payload}`,
+                message: `Email hoặc mật khẩu không chính xác!`,
             });
             localStorage.removeItem(USER_INFO_KEY)
             state.userInfoState = {
@@ -110,7 +110,7 @@ const userSlice = createSlice({
         },
         updateUserInfoActionFailed(state, action) {
             notification.error({
-                message: `Update Failed: ${action.payload}`,
+                message: `Cập nhật thất bại!`,
             });
             state.userInfoState = {
                 ...state.userInfoState,

@@ -52,7 +52,7 @@ function* updateUser(action) {
         })
         yield put(updateUserInfoActionSuccess(response.data.user))
     } catch (error) {
-        yield put(updateUserInfoActionFailed(error.response))
+        yield put(updateUserInfoActionFailed(error.response.data))
     }
 }
 

@@ -1,14 +1,19 @@
 import React from 'react';
-import { Radio } from 'antd';
+import { notification, Radio, Button} from 'antd';
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Button } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCartAction } from '../../stores/slices/cart.slice';
 import { v4 } from 'uuid'
 
 const ButtonGroup = Button.Group;
+
+const listSize = [
+    { label: 'Nhỏ', price: 0 },
+    { label: 'Vừa', price: 6 },
+    { label: 'Lớn', price: 10 },
+]
 
 export default function DetailCoffee() {
     const cartAction = useSelector(state => state.cart.cartState)
@@ -22,7 +27,7 @@ export default function DetailCoffee() {
     const productName = location.state.productName
     const price = location.state.price
     const description = location.state.description
-    const total = price * count + value * count
+    const total = price * count + value.price * count
 
     const increase = () => {
         setCount(count + 1);
@@ -42,7 +47,12 @@ export default function DetailCoffee() {
     };
 
     const handleAddToCart = (image, productName, total, count, size) => {
-        const cartItem = {
+        if(value === 0){
+            notification.error({
+                message: `Bạn chưa chọn size!`,
+            });    
+        }else{
+            const cartItem = {
             id: v4(),
             idProduct: id,
             image: image,
@@ -50,56 +60,60 @@ export default function DetailCoffee() {
             total: total,
             count: count,
             size: size
-        }
+            }
         dispatch(addToCartAction(cartItem))
+        }
+        
     }
 
     return (
-        <div className='item__detail'>
-            <div className="product__detail">
-                <div className="img__product">
-                    <img src={image} alt="" />
-                    <div className="description__product">
-                        <span>{description}</span>
-                    </div>
-                </div>
-                <div className="options__product">
-                    <h2>{productName}</h2>
-                    <span>{price}.000đ</span>
-                    <div className="option__quantity">
-                        <button className='desc'>
-                            <ButtonGroup>
-                                <Button onClick={decline}>
-                                    <MinusOutlined />
-                                </Button>
-                            </ButtonGroup>
-                        </button>
-                        <span>{count}</span>
-                        <button className='asc'>
-                            <ButtonGroup>
-                                <Button
-                                    onClick={increase}
-                                >
-                                    <PlusOutlined />
-                                </Button>
-                            </ButtonGroup>
-                        </button>
-                    </div>
-                    <div className="option__size">
-                        <p>Choose Size</p>
-                        <div className="type__size">
-                            <Radio.Group onChange={onChange} value={value}>
-                                <Radio value={0}>Nhỏ + 0đ</Radio>
-                                <Radio value={6}>Vừa + 6.000đ</Radio>
-                                <Radio value={10}>Lớn + 10.000đ</Radio>
-                            </Radio.Group>
+        <>
+            <div className='item__detail'>
+                <div className="product__detail">
+                    <div className="img__product">
+                        <img src={image} alt="" />
+                        <div className="description__product">
+                            <span>{description}</span>
                         </div>
                     </div>
-                    <button onClick={() => handleAddToCart(image, productName, total, count, value)}
-                    >Thêm vào giỏ hàng - {total}.000đ
-                    </button>
+                    <div className="options__product">
+                        <h2>{productName}</h2>
+                        <span>{price}.000đ</span>
+                        <div className="option__quantity">
+                            <button className='desc'>
+                                <ButtonGroup>
+                                    <Button onClick={decline}>
+                                        <MinusOutlined />
+                                    </Button>
+                                </ButtonGroup>
+                            </button>
+                            <span>{count}</span>
+                            <button className='asc'>
+                                <ButtonGroup>
+                                    <Button
+                                        onClick={increase}
+                                    >
+                                        <PlusOutlined />
+                                    </Button>
+                                </ButtonGroup>
+                            </button>
+                        </div>
+                        <div className="option__size">
+                            <p>Choose Size</p>
+                            <div className="type__size">
+                                <Radio.Group onChange={onChange} value={value}>
+                                    {listSize.map(item => {
+                                        return <Radio key={item.label} value={item}>{item.label} + {item.price}k</Radio>
+                                    })}
+                                </Radio.Group>
+                            </div>
+                        </div>
+                        <button onClick={() => handleAddToCart(image, productName, total, count, value)}
+                        >Thêm vào giỏ hàng - {total}.000đ
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
