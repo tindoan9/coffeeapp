@@ -22,7 +22,6 @@ export default function Cart() {
     
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [size, setSize] = useState('Nhỏ')
     const [infoOrder, setInfoOrder] = useState({
         name: '', phone: '', address: '', status: 'Chờ xác nhận'
     })

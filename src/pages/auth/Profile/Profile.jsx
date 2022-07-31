@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutAction, updateUserInfoAction, USER_ID } from '../../../stores/slices/user.slice';
+import { logoutAction, updateUserInfoAction } from '../../../stores/slices/user.slice';
 import { useNavigate } from 'react-router-dom';
 
 const layout = {

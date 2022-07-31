@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button, Form, Input } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { registerAction } from "../../../stores/slices/user.slice";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
@@ -37,7 +37,6 @@ const schema = yup
   .required();
 
 export default function Register() {
-  const userInfo = useSelector((state) => state.user.userInfoState);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { notification, Radio, Button} from 'antd';
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCartAction } from '../../stores/slices/cart.slice';
 import { v4 } from 'uuid'
 
@@ -16,7 +16,6 @@ const listSize = [
 ]
 
 export default function DetailCoffee() {
-    const cartAction = useSelector(state => state.cart.cartState)
     const [value, setValue] = useState(0);
     const [count, setCount] = useState(1);
     const location = useLocation()

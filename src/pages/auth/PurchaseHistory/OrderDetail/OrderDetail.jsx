@@ -1,6 +1,5 @@
 import { Button } from 'antd'
 import React from 'react'
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { cancelOrderAction } from '../../../../stores/slices/cart.slice'
