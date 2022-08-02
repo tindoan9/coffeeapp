@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Banner from '../../assets/banner-pagehome.webp'
 import Footer from './Footer/Footer';
 import ListProduct from './ListProduct/ListProduct';
@@ -11,7 +12,9 @@ export default function HomePage() {
 				<div className="title">
 					<h1>Cà phê ngon sẽ luôn tìm được khách hàng</h1>
 					<h3>Chúng tôi cung cấp nhiều loại cà phê độc đáo và ngon nhất</h3>
-					<button class="btn-41"><span>Order Now</span></button>
+					<NavLink to={'/coffee'}>
+						<button class="btn-41"><span>Order Now</span></button>
+					</NavLink>
 				</div>
 			</div>
 			<ListProduct></ListProduct>

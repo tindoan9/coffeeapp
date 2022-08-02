@@ -1,11 +1,11 @@
 import { delay, put, takeEvery } from "redux-saga/effects";
 import { ProductAPI } from "../../api";
-import { fetchProductAction, fetchProductActionError, fetchProductActionSuccess, searchProductAction, searchProductActionFailed, searchProductActionSuccess } from "../slices/product.slice";
+import { fetchCategoryAction, fetchCategoryActionSuccess, fetchProductAction, fetchProductActionError, fetchProductActionSuccess, searchProductAction, searchProductActionFailed, searchProductActionSuccess } from "../slices/product.slice";
 
 function* fetchProduct(action) {
 	try {
 		yield delay(500)
-		const { page, limit } = action.payload;
+		const { page } = action.payload;
 		const response = yield ProductAPI.fetchProduct(page)
 		const productData = response.data
 		const totalProduct = response.headers['x-total-count']
@@ -31,7 +31,20 @@ function* searchProduct(action){
 	}
 }
 
+function* fetchCategory(action) {
+	try {
+		const response = yield ProductAPI.fetchCategory()
+		const category = response.data
+		yield put(fetchCategoryActionSuccess({
+			category: category
+		}))
+	} catch (e) {
+		yield put(fetchCategoryAction(e.response.data))
+	}
+}
+
 export function* productSaga() {
 	yield takeEvery(searchProductAction, searchProduct)
+	yield takeEvery(fetchCategoryAction, fetchCategory)
 	yield takeEvery(fetchProductAction, fetchProduct)
 }

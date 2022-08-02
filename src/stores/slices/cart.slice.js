@@ -13,12 +13,6 @@ const initialState = {
 		cartItem: 0,
 		loading: false,
 		error: null,
-		pagination: {
-		    page: 1,
-		    limit: ORDER_LIMIT,
-		    total: null,
-            totalPage: null
-	    }
 	}
 }
 
@@ -80,27 +74,17 @@ const cartSlice = createSlice({
             }
 		},
 		fetchOrderAction: (state, action) => {
-            const page = action.payload
             state.cartState = {
                 ...state.cartState,
                 loading: true,
-                pagination: {
-                    ...state.cartState.pagination,
-                    page: page
-                }
             }
 		},
         fetchOrderActionSuccess: (state, action) => {
-            const {data, totalOrder} = action.payload
+            const {data} = action.payload
             state.cartState = {
                 ...state.cartState,
                 data,
                 loading: false,
-                pagination: {
-                    ...state.cartState.pagination,
-                    total: +totalOrder,
-                    totalPage: totalOrder / ORDER_LIMIT
-                }
             }
 		},
         fetchOrderActionError: (state, action) => {

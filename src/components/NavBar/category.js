@@ -4,8 +4,8 @@ export const category = [
 		path: '/coffee',
 	},
 	{
-		title: 'CloudFee',
-		path: '/cloudfee'
+		title: 'Other',
+		path: '/other-category'
 	}
 ]
 

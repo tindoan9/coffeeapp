@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #333;
+    background-color: rgb(225, 223, 223);
 }
 .order__list .menu__status a{
     font-size: 20px;

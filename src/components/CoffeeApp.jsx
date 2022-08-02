@@ -9,6 +9,8 @@ import PurchaseHistory from '../pages/auth/PurchaseHistory/PurchaseHistory';
 import Register from '../pages/auth/Register/Register';
 import DetailCoffee from '../pages/DetailCoffee/DetailCoffee';
 import HomePage from '../pages/HomePage/HomePage';
+import Coffee from '../pages/products/Coffee/Coffee';
+import OtherCategory from '../pages/products/OtherProducts/OtherProduct';
 import NavBar from './NavBar/NavBar';
 
 
@@ -23,6 +25,8 @@ export function CoffeeApp() {
 					<Route path='/Login' element={<Login></Login>}></Route>
 					<Route path='/cart' element={<Cart></Cart>}></Route>
 					<Route path='/profile' element={<Profile></Profile>}></Route>
+					<Route path='/other-category' element={<OtherCategory></OtherCategory>}></Route>
+					<Route path='/coffee' element={<Coffee></Coffee>}></Route>
 					<Route path='/register' element={<Register></Register>}></Route>
 					<Route path='/cart/success/:id' element={<Success></Success>}></Route>
 					<Route path='/order-list/detail:id' element={<OrderDetail></OrderDetail>}></Route>

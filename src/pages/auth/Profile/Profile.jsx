@@ -18,11 +18,8 @@ export default function Profile() {
    const dispatch = useDispatch();
    const navigate = useNavigate()
 
-   console.log(userInfo.data.id);
-
    const userName = userInfo.data.name
    const email = userInfo.data.email
-   console.log("🚀 ~ file: Profile.jsx ~ line 25 ~ Profile ~ email", email)
    const phone = userInfo.data.phone
    const address = userInfo.data.address
 
@@ -32,8 +29,6 @@ export default function Profile() {
    }
 
    const onFinish = (values) => {
-   console.log("🚀 ~ file: Profile.jsx ~ line 32 ~ onFinish ~ values", values)
-      
       dispatch(updateUserInfoAction(values))
       navigate(`/profile`)
    };

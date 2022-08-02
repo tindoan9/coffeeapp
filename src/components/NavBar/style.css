@@ -35,13 +35,10 @@ header{
 .nav__links li a{
 	transition: all 0.3s ease 0s;
 }
-/* .nav__links li:hover{
-	color: #0088a9;
-} */
 .category{
 	display: none;
 	position: absolute;
-	transform: translate(-40px, 0px);
+	transform: translate(-30px, 0px);
 	background-color: #FFFFFF;
 	padding: 20px 10px;
 	border-radius: 20px;
@@ -54,7 +51,7 @@ header{
 	display: block;
 }
 .icons{
-	margin-right: 90px;
+	margin-right: 50px;
 }
 .login{
 	font-size: 35px;

@@ -6,5 +6,6 @@ export const ProductAPI = {
 		const queryParam = `?_page=${page}&_limit=${PRODUCT_LIMIT}`
 		return API.get(`${URL_API}/products${queryParam}`)
 	},
+	fetchCategory: () => API.get(`${URL_API}/products`),
 	searchProductList: (text) => API.get(`${URL_API}/products?q=${text}`)
 }

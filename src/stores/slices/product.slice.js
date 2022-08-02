@@ -6,6 +6,7 @@ export const PRODUCT_LIMIT = 10;
 const initialState = {
     productState: {
         data: [],
+        category: [],
         loading: false,
         error: null,
         search: [],
@@ -68,9 +69,26 @@ const productSlice = createSlice({
         },
         searchProductActionFailed: (state, action) => {
             notification.error(action.payload)
-        }
+        },
+        fetchCategoryAction: (state, action) => {
+            state.productState = {
+                ...state.cartState,
+                loading: true,
+            }
+		},
+        fetchCategoryActionSuccess: (state, action) => {
+            const {category} = action.payload
+            state.productState = {
+                ...state.cartState,
+                category: category,
+                loading: false,
+            }
+		},
+        fetchCategoryActionError: (state, action) => {
+            notification.error(action.payload)
+		},
 	}
 })
 
-export const {fetchProductAction, fetchProductActionSuccess, fetchProductActionError, getProductList, searchProductAction, searchProductActionSuccess, searchProductActionFailed} = productSlice.actions
+export const {fetchProductAction, fetchProductActionSuccess, fetchProductActionError, getProductList, searchProductAction, searchProductActionSuccess, searchProductActionFailed, fetchCategoryAction, fetchCategoryActionSuccess, fetchCategoryActionError} = productSlice.actions
 export const productReducer = productSlice.reducer
