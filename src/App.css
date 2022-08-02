@@ -1,8 +1,8 @@
-@import url('./components/NavBar/style.css');
-@import url('./components/NavBar/pages/HomePage/style.css');
-@import url('./components/NavBar/pages/HomePage/ListProduct/style.css');
-@import url('./components/NavBar/pages/HomePage/Footer/style.css');
-@import url('./components/NavBar/pages/DetailCoffee/style.css');
-@import url('./components/NavBar/pages/Login/style.css');
-@import url('./components/NavBar/pages/Cart/style.css');
-@import url('./components/NavBar/pages/Profile/style.css');
+@import url('./coffeeApp/NavBar/style.css');
+@import url('./coffeeApp/NavBar/pages/HomePage/style.css');
+@import url('./Admin/style.css');
+@import url('./Admin/NavBarAdmin/style.css');
+@import url('./Admin/AdminPages/Products/ProductPage/style.css');
+@import url('./Admin/AdminPages/Edit/style.css');
+@import url('./Admin/AdminPages/Purchase/PurchaseLayout/style.css');
+@import url('./Admin/AdminPages/Purchase/PurchasePage/style.css');

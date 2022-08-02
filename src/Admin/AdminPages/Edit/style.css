@@ -1,0 +1,84 @@
+
+.edit-product{
+    width: 30%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 5px 10px 30px 0.001px gold;
+    position: fixed;
+    top: 110px;
+    left: 35%;
+}
+
+.close-edit{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 20px;
+    color: red;
+}
+
+.edit-product h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+.close-edit:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.label-input1{
+    margin-bottom:20px ; 
+}
+.label-input1 label{
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.label-input1 input{
+    outline: none;
+    float: right;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.select-img{
+    margin-right: 24px;
+    float: left;
+}
+
+.save-add{
+    padding: 5px 20px;
+    font-size: 18px ;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+    border-radius: 7px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.reset{
+    padding: 5px 20px;
+    font-size: 18px ;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+    border-radius: 7px;
+    margin-left: 25%;
+    margin-top: 20px;
+}
+
+.save-add:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.reset:hover{
+    cursor: pointer;
+    color: white;
+}

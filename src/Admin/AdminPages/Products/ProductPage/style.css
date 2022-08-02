@@ -1,0 +1,160 @@
+.all-product { 
+    width: 100%;
+    padding-top: 120px;
+    padding-left: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.all-product.pagination{
+    
+}
+.product-item {
+    float: left;
+    padding-top: 5px;
+    width: 18%;
+    height: 300px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px 0 rgb(247, 224, 94);
+    margin: 10px; 
+    background-color: white;
+      
+}
+
+.product-item:hover{
+    cursor: pointer;
+    
+}
+
+.product-item img{
+    width: 90%;
+    
+}
+.detail-item{
+    margin: 20px auto;
+    width: 60%;
+    height: 500px;
+    padding: 20px;
+    box-shadow: 5px 10px 50px 0.005px rgb(161, 161, 161);
+    position: fixed;
+    top: 70px;
+    left: 20%;
+    background-color: white;
+}
+.detail-item img{
+    width: 60%;
+    float: left;
+    margin-right: 20px;
+}
+
+.detail-infor{
+    text-align: center;
+}
+
+.detail-infor button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color:wheat;
+    margin-bottom: 10px;
+}
+
+.detail-infor button:hover{
+    cursor: pointer;
+    background-color:  lightseagreen;
+}
+
+.detail-infor h3 {
+    padding-left: 10px;
+    margin-bottom:  40px;
+    font-size: 20px;
+}
+
+.detail-infor .back {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-right: -5px;
+    color: red;
+}
+
+.back:hover{cursor: pointer;}
+
+.des-detail{
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+.add-products{
+    width: 35%;
+    position: fixed;
+    top: 80px;
+    left: 35%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 5px 10px 30px 0.001px gold;
+}
+
+.add-products h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.close-add{
+    position: absolute;
+    top: 5px;
+    right:15px;
+}
+
+.close-add:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.label-input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.label-input label{
+    float: left;
+    width: 35%;
+    height: 30px;
+
+}
+.input-product{
+    outline: none;
+    border: 1px solid wheat;
+    width: 60%;
+    height:30px;
+    
+}
+.select-img{
+    margin-right: 24px;
+}
+
+.save-add{
+    padding: 5px 20px;
+    font-size: 18px ;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+    border-radius: 7px;
+    margin-left: 40%;
+}
+
+.save-add:hover{
+    cursor: pointer;
+}
