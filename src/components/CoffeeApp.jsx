@@ -21,6 +21,7 @@ export function CoffeeApp() {
 				<NavBar></NavBar>
 				<Routes>
 					<Route path='/' element={<HomePage></HomePage>}></Route>
+					{/* <Route path='/dashboard' element={<HomePage></HomePage>}></Route> */}
 					<Route path='/product-detail/:id' element={<DetailCoffee></DetailCoffee>}></Route>
 					<Route path='/Login' element={<Login></Login>}></Route>
 					<Route path='/cart' element={<Cart></Cart>}></Route>
