@@ -12,7 +12,6 @@ import {
   updateProductFailed,
   deleteProductAction,
   deleteProductSuccess,
-  deleteProductFailed
 } from "../slices/product.slice.js";
 
 
@@ -22,30 +21,15 @@ function* fetchProduct(action) {
     yield delay(100);
     const {page, limit} = action.payload
     const responseApi = yield ProductAPI.fetchProduct(page, limit);
-    
-    
     const productData = responseApi.data;
-    console.log("🚀 ~ file: product.saga.js ~ line 28 ~ function*fetchProduct ~ productData", productData)
     const totalProduct = responseApi.headers["x-total-count"];
-
-    // Put 1 action đã được định nghĩa ở slice
     yield put(
       fetchProductActionSuccess({
         data: productData,
         totalProduct: totalProduct,
       })
     );
-    // const proPayload = action.payload;
-  
-    // const response = yield ProductAPI.fetchProduct({
-    //   data: proPayload.data,
-    //   totalProduct: proPayload.headers["x-total-count"]
-    // })
-    // console.log(response)
-    // yield put(fetchProductActionSuccess(response.data.products))
   } catch (e) {
-
-    // Put 1 action đã được định nghĩa ở slice
     yield put(fetchProductActionFailed(e.responseApi.data));
     
   }
@@ -91,7 +75,6 @@ function* deleteProductItems(action) {
 export function* productSaga() {
   yield takeEvery(fetchProductAction, fetchProduct);
   yield takeEvery(addProductItem, addProductItems);
-  // yield takeEvery(addProductSuccess,fetchProduct)
   yield takeEvery(updateProductAction,updateProductItems);
   yield takeEvery(deleteProductAction,deleteProductItems);
 }

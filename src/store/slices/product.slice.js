@@ -8,15 +8,10 @@ const initialState = {
     data: [],
     loading: false,
     error: null,
-    // Thông tin phân trang
     pagination: {
-      // Trang hiện tại
       page: 1,
-      // Số record trả về trong 1 trang
       limit: PRODUCT_LIMIT,
-      // Tổng số record từ server
       total: null,
-      // Tổng số trang
       totalPage: null,
     },
   },
@@ -77,7 +72,6 @@ const productSlice = createSlice({
       
     },
     updateProductAction: (state, action) => {
-      
       state.productState = {
         loading:true,
         ...state.productState,

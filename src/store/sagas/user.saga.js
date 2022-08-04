@@ -11,7 +11,6 @@ import { loginAction,
 import { AuthAPI } from '../../api';
 
 function* login(action) {
-    console.log('abc')
     try {
         const {
             loginPayload
