@@ -1,0 +1,27 @@
+.confirm,
+.delivering,
+.delivered,
+.cancel{
+    padding-top: 90px;
+    padding-left:10%;
+    width: 100%;  
+   
+   
+}
+
+
+.confirm-title td{
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgb(150, 146, 146);
+    margin: 0 auto;
+}
+
+.button{
+    color: blue;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    border: none;
+}
+

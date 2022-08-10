@@ -1,5 +1,5 @@
 import React from "react";
-import LogoPage from "../../assets/logo-page.png";
+import LogoPage from "../../../../../assets/logo-page.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
 import { GrUserAdmin } from "react-icons/gr";
@@ -9,8 +9,8 @@ import { Button, Drawer, Dropdown, Menu, Space, Badge } from "antd";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { searchProductAction } from "../../stores/slices/product.slice";
-import { getTotalItem } from "../../stores/slices/cart.slice";
+import { getTotalItem } from "../../../../../stores/slices/cart.slice";
+import { searchProductAction } from "../../../../../stores/slices/product.slice";
 
 const unauthenticatedMenu = [
   {

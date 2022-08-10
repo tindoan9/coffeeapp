@@ -1,40 +1,48 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Cart from '../pages/auth/Cart/Cart';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Edit from '../pages/Admin/AdminPages/Edit/Edit';
+import Products from '../pages/Admin/AdminPages/Products/Products';
+import Purchase from '../pages/Admin/AdminPages/Purchase/Purchase';
+import Turnover from '../pages/Admin/AdminPages/Turnover';
 import Success from '../pages/auth/Cart/CheckoutSuccess/Success';
-import Login from '../pages/auth/Login/Login';
-import Profile from '../pages/auth/Profile/Profile';
 import OrderDetail from '../pages/auth/PurchaseHistory/OrderDetail/OrderDetail';
 import PurchaseHistory from '../pages/auth/PurchaseHistory/PurchaseHistory';
-import Register from '../pages/auth/Register/Register';
 import DetailCoffee from '../pages/DetailCoffee/DetailCoffee';
-import HomePage from '../pages/HomePage/HomePage';
-import Coffee from '../pages/products/Coffee/Coffee';
-import OtherCategory from '../pages/products/OtherProducts/OtherProduct';
-import NavBar from './NavBar/NavBar';
+import Header from '../pages/Header';
 
 
 export function CoffeeApp() {
 	return (
 		<>
 			<BrowserRouter>
-				<NavBar></NavBar>
 				<Routes>
-					<Route path='/' element={<HomePage></HomePage>}></Route>
-					{/* <Route path='/dashboard' element={<HomePage></HomePage>}></Route> */}
-					<Route path='/product-detail/:id' element={<DetailCoffee></DetailCoffee>}></Route>
-					<Route path='/Login' element={<Login></Login>}></Route>
-					<Route path='/cart' element={<Cart></Cart>}></Route>
-					<Route path='/profile' element={<Profile></Profile>}></Route>
-					<Route path='/other-category' element={<OtherCategory></OtherCategory>}></Route>
-					<Route path='/coffee' element={<Coffee></Coffee>}></Route>
-					<Route path='/register' element={<Register></Register>}></Route>
-					<Route path='/cart/success/:id' element={<Success></Success>}></Route>
+					<Route path='/' element={<Header/>}></Route>
+					<Route path='/product-detail/:id' element={<DetailCoffee/>}></Route>
+					<Route path='/Login' element={<Header/>}></Route>
+					<Route path='/cart' element={<Header/>}></Route>
+					<Route path='/profile' element={<Header/>}></Route>
+					<Route path='/other-category' element={<Header/>}></Route>
+					<Route path='/coffee' element={<Header/>}></Route>
+					<Route path='/register' element={<Header/>}></Route>
+					<Route path='/cart/success/:id' element={<Success/>}></Route>
 					<Route path='/order-list/detail:id' element={<OrderDetail></OrderDetail>}></Route>
 					<Route path='/order-list/delivering' element={<PurchaseHistory/>}/>
 					<Route path='/order-list/received' element={<PurchaseHistory/>}/>
 					<Route path='/order-list/cancelled' element={<PurchaseHistory/>}/>
 					<Route path='/order-list/confirm' element={<PurchaseHistory/>}/>
+					<Route path='/dashboard' element={<Navigate to='/admin/products'/>}></Route>
+					<Route path="/admin/products" element ={<Navigate to="/admin/products/all"/>}/>
+					<Route path="/admin/products/all" element = {<Products/>}></Route>
+					<Route path="/admin/products/coffee" element = {<Products/>}></Route>
+                    <Route path="/admin/products/other" element = {<Products/>}></Route>
+                    <Route path="/admin/products/add-product" element = {<Products/>}></Route>
+					<Route path="/admin/purchase" element = {<Navigate to="/admin/purchase/confirm"/>}></Route>
+                    <Route path="/admin/purchase/confirm" element = {<Purchase/>}></Route>                    
+                    <Route path="/admin/purchase/delivering" element = {<Purchase/>}></Route>
+                    <Route path="/admin/purchase/delivered" element = {<Purchase/>}></Route>
+                    <Route path="/admin/purchase/cancel" element = {<Purchase/>}></Route>
+                    <Route path="/admin/turnover" element = {<Turnover/>}></Route>
+                    <Route path="/admin/edit/:id" element = {<Edit/>}/>
 				</Routes>
 			</BrowserRouter>
 		</>

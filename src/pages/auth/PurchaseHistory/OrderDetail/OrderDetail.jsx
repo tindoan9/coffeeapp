@@ -2,6 +2,7 @@ import { Button } from 'antd'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import NavBar from '../../../../components/layouts/NavbarUser-Layout/components/NavBar/NavBar'
 import { cancelOrderAction } from '../../../../stores/slices/cart.slice'
 
 export default function OrderDetail() {
@@ -23,6 +24,7 @@ export default function OrderDetail() {
 
     return (
         <>
+        <NavBar/>
             <div className="order__detail">
                 <div className="form__order__detail">
                     <div className="product__order__info">

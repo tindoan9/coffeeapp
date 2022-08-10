@@ -1,5 +1,6 @@
 import { delay, put, takeEvery } from "redux-saga/effects";
 import { CartAPI } from "../../api";
+import { ConfirmOrderAction, ConfirmOrderFailded, ConfirmOrderSeccess } from "../slices/admin.cart.slice";
 import { cancelOrderAction, cancelOrderFailedAction, cancelOrderSuccessAction, fetchOrderAction, fetchOrderActionError, fetchOrderActionSuccess, paymentAction, paymentActionFailed, paymentActionSuccess } from "../slices/cart.slice";
 
 function* onlPayment(action){
@@ -49,8 +50,22 @@ function* cancelOrder(action) {
     }
 }
 
+function* StatusOrder(action) {
+    try {
+        yield delay(500);
+        const ItemOrder = action.payload
+        const response = yield CartAPI.cancelOrder(ItemOrder.id, {status: ItemOrder.status});        
+        
+        yield put(ConfirmOrderSeccess(response.data))
+        
+    } catch (e) {
+        yield put(ConfirmOrderFailded(e.response.data))
+    }
+}
+
 export function* cartSaga(){
     yield takeEvery(paymentAction, onlPayment)
     yield takeEvery(fetchOrderAction, fetchOrder)
+    yield takeEvery(ConfirmOrderAction, StatusOrder)
     yield takeEvery(cancelOrderAction, cancelOrder)
 }

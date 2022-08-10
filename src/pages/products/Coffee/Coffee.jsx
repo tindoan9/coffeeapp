@@ -9,7 +9,6 @@ export default function Coffee() {
     const navigate = useNavigate()
 
     const category = productState.category
-    console.log(category)
 
     useEffect(() => {
         dispatch(fetchCategoryAction());

@@ -86,7 +86,7 @@ const productSlice = createSlice({
 		},
         fetchCategoryActionError: (state, action) => {
             notification.error(action.payload)
-		},
+		}
 	}
 })
 

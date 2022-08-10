@@ -6,6 +6,7 @@ import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { addToCartAction } from '../../stores/slices/cart.slice';
 import { v4 } from 'uuid'
+import NavBar from '../../components/layouts/NavbarUser-Layout/components/NavBar/NavBar';
 
 const ButtonGroup = Button.Group;
 
@@ -67,6 +68,7 @@ export default function DetailCoffee() {
 
     return (
         <>
+        <NavBar/>
             <div className='item__detail'>
                 <div className="product__detail">
                     <div className="img__product">

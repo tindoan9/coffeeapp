@@ -1,4 +1,3 @@
-import { ORDER_LIMIT } from '../stores/slices/cart.slice'
 import {API, URL_API} from './const.api'
 
 export const CartAPI = {

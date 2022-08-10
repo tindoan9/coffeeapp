@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button, Result } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
+import NavBar from '../../../../components/layouts/NavbarUser-Layout/components/NavBar/NavBar';
 
 export default function Success() {
     const {id} = useParams()
     const navigate = useNavigate()
     return (
         <>
+        <NavBar/>
         <Result
         style={
             {
