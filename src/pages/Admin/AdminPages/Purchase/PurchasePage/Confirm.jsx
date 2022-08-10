@@ -1,32 +1,28 @@
 import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import { ConfirmOrderAction } from "../../../../../stores/slices/admin.cart.slice";
-import { fetchOrderAction } from "../../../../../stores/slices/cart.slice";
+import { ConfirmOrderAction, fetchOrderAdminAction } from "../../../../../stores/slices/admin.cart.slice";
 
 
 export function Confirm() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const orderState = useSelector((state) => state.cart.cartState);
+  const orderState = useSelector((state) => state.adminCart.cartState);
   const data = orderState.data;
   const loading = orderState.loading;
   
+  const status = orderState.status
 
   useEffect(() => {
-    dispatch(fetchOrderAction())
-  }, [dispatch, data]);
+    dispatch(fetchOrderAdminAction())
+  }, [dispatch, status]);
 
   const handleConfirmOrder = (item) => {
       dispatch(ConfirmOrderAction({...item, status:'Đang giao'}));
-      navigate(`/admin/purchase/delivering`)
   }
   const handleCancelOrder = (item) => {
       dispatch(ConfirmOrderAction({...item, status:'Đã hủy'}));
-      navigate(`/admin/purchase/cancel`)
   }
 
    

@@ -5,7 +5,7 @@ const { createSlice } = require("@reduxjs/toolkit")
 const initialState = {
     cartState:{
         data: [],
-        Cancel:"",
+        status:"",
         loading:false,
         error:null
     }
@@ -15,23 +15,23 @@ const cartSlice = createSlice({
     name:"cart",
     initialState,
     reducers:{
-        fetchOderAction:(state, action) => {
-            state.cartState = {...state.cartState,
-            loading:true}
-        },
-
-        fetchOderSeccess:(state, action) => {
-            const data = action.payload
-            console.log("🚀 ~ file: admin.cart.slice.js ~ line 25 ~ data", data)
+        fetchOrderAdminAction: (state, action) => {
+            state.cartState = {
+                ...state.cartState,
+                loading: true,
+            }
+		},
+        fetchOrderAdminSuccess: (state, action) => {
+            const {data} = action.payload
             state.cartState = {
                 ...state.cartState,
                 data,
-                loading:false,
+                loading: false,
             }
-        },
-        fetchOderFailed: (state, action) =>{
+		},
+        fetchOrderAdminError: (state, action) => {
             notification.error(action.payload)
-        },
+		},
         ConfirmOrderAction:(state, action) => {
             state.cartState = {...state.cartState,
                 loading:true}
@@ -39,7 +39,7 @@ const cartSlice = createSlice({
         ConfirmOrderSeccess:(state, action) => {
             state.cartState = {
                 ...state.cartState,
-                Cancel: action.payload,
+                status: action.payload.status,
                 loading:false,
             }
         },
@@ -50,6 +50,6 @@ const cartSlice = createSlice({
     }
 })
 
-export const {fetchOderAction,fetchOderSeccess,fetchOderFailed,ConfirmOrderAction,ConfirmOrderSeccess,ConfirmOrderFailded} =  cartSlice.actions;
+export const {fetchOrderAdminAction, fetchOrderAdminSuccess, fetchOrderAdminError, ConfirmOrderAction,ConfirmOrderSeccess,ConfirmOrderFailded} =  cartSlice.actions;
 
 export const adminCartReducer = cartSlice.reducer;

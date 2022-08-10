@@ -4,18 +4,20 @@ import { LoadingOutlined } from "@ant-design/icons";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchOrderAction } from "../../../../../stores/slices/cart.slice";
+import { fetchOrderAdminAction } from "../../../../../stores/slices/admin.cart.slice";
 
 
 export function Cancel() {
   const dispatch = useDispatch();
-  const orderState = useSelector((state) => state.cart.cartState);
+  const orderState = useSelector((state) => state.adminCart.cartState);
   const data = orderState.data;
   const loading = orderState.loading;
   
+  const status = orderState.status
+
   useEffect(() => {
-    dispatch(fetchOrderAction())
-  }, [dispatch]);
+    dispatch(fetchOrderAdminAction())
+  }, [dispatch, status]);
 
   
 
