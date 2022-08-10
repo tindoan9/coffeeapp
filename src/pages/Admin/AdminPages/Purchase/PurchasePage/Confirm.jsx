@@ -31,7 +31,7 @@ export function Confirm() {
 
    
   
-  const listTitle = [ 'UserName','Phone', 'Address', 'ListOder','Count','Total','TotalBill','Date', 'Action' ]
+  const listTitle = [ 'UserName','Phone', 'Address', 'ListOder','Count','Price','TotalBill','Date', 'Action' ]
   return (
     <div className="confirm">
         {loading && <div style={{textAlign:'center'}}><LoadingOutlined /></div>}
@@ -79,7 +79,7 @@ export function Confirm() {
                     )
                   })}
                 </td>
-                <td>{item.totalBill}</td>
+                <td>{item.totalBill}.000đ</td>
                 <td>{item.date}</td>
                 <td>
                   <button className="button" onClick={()=> {handleConfirmOrder(item)}} >Confirm</button>

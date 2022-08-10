@@ -4,7 +4,7 @@ import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LoadingOutlined } from "@ant-design/icons";
 import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "../../../../../stores/slices/admin.product.slice";
-import { Pagination } from "antd";
+import { message, notification, Pagination } from "antd";
 
 function AllProducts() {
     const listProduct = useSelector(state => state.adminProduct.productState)
@@ -23,7 +23,7 @@ function AllProducts() {
 
     useEffect(() => {
         dispatch(fetchProductAction({ page: _page ? _page : 1, limit: _limit }));
-    }, [dispatch, _page, _limit])
+    }, [dispatch, _page, _limit, total])
 
 
     const handleDetailItem = (product) => {
@@ -34,13 +34,14 @@ function AllProducts() {
 
     const handleDeleteDetailItem = () => {
         setShowDetail(!showDetail);
-        
     }
 
     const handleDeleteProduct = () => {
         dispatch(deleteProductAction(detailItem.id));
         setShowDetail(!showDetail)
-
+        notification.success({
+            message: 'Xóa thành công!'
+        })
     }
     const navigate = useNavigate();
     const gotoDetail = (item) => {

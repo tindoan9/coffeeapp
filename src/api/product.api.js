@@ -2,8 +2,8 @@ import { PRODUCT_LIMIT } from '../stores/slices/product.slice'
 import {API, URL_API} from './const.api'
 
 export const ProductAPI = {
-	fetchProduct: (page) => {
-		const queryParam = `?_page=${page}&_limit=${PRODUCT_LIMIT}`
+	fetchProduct: (page, limit) => {
+		const queryParam = `?_page=${page}&_limit=${limit}`
 		return API.get(`${URL_API}/products${queryParam}`)
 	},
 	fetchCategory: () => API.get(`${URL_API}/products`),

@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Edit from '../pages/Admin/AdminPages/Edit/Edit';
 import Products from '../pages/Admin/AdminPages/Products/Products';
 import Purchase from '../pages/Admin/AdminPages/Purchase/Purchase';
-import Turnover from '../pages/Admin/AdminPages/Turnover';
+import Turnover from '../pages/Admin/AdminPages/Turnover/Turnover';
 import Success from '../pages/auth/Cart/CheckoutSuccess/Success';
 import OrderDetail from '../pages/auth/PurchaseHistory/OrderDetail/OrderDetail';
 import PurchaseHistory from '../pages/auth/PurchaseHistory/PurchaseHistory';

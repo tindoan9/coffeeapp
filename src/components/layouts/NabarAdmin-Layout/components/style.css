@@ -20,7 +20,6 @@
     height: 40px;
     
 }
-
 .navbar-a a {
     font-size: 25px ;
     font-weight: bold;
@@ -29,17 +28,18 @@
     text-decoration: none;
     border-radius: 10px;
     padding: 5px 10px;
-    background-color:white;
-    color:rgb(61, 40, 40);
+    transition: border-bottom 2s;
+    color:black;
     font-weight: bold;
 }
 
 .navbar-a a:hover{
     cursor: pointer;
+    color: gold;
 }
 
 .navbar-admin .btn .active{
-    background-color: rgb(241, 227, 22);
+    border-bottom: 3px solid black;
     color: white;
     
 }

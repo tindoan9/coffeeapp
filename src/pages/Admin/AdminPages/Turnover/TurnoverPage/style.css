@@ -1,0 +1,66 @@
+.turnover {
+    width: 100%;
+    padding-top: 150px;
+}
+
+.search-date{
+    text-align: center;
+}
+.search-date input{
+    width: 20%;
+    height: 30px;
+    outline: none;
+    border: 0.5px solid rgb(126, 125, 123);
+    border-radius: 3px;
+}
+.search-date button{
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.search-date button:hover{
+    background-color: rgb(33, 187, 33);
+    color: black;
+}
+
+.turnover-title{
+    width: 60%;margin: 0 auto;
+    margin-top: 40px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 10px;
+    background-color: rgb(119, 119, 119);
+    border-bottom: 2px solid rgb(61, 61, 61);
+}
+
+.turnover-type{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 10px;
+    border-bottom: 1px solid rgb(61, 61, 61);
+}
+
+.logout-turnover{
+    position: absolute;left: 5%;
+    bottom: 20px;
+    background: #fece00;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    min-width: 30px;
+  }
+  .logout-turnover:hover{
+    background-color: #000;
+    color: #fece00;
+    cursor: pointer;
+  }

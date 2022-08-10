@@ -1,8 +1,8 @@
 import { notification } from "antd";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addProductAction } from "../../../../../stores/slices/admin.product.slice";
+import { addProductAction, PRODUCT_LIMIT } from "../../../../../stores/slices/admin.product.slice";
 import {v4} from "uuid";
 function AddProducts() {
     const [addProduct, setAddProduct] = useState(false);
@@ -16,7 +16,9 @@ function AddProducts() {
         
     });
     const dispatch = useDispatch();
-
+    const navigate = useNavigate()
+    const listProduct = useSelector(state => state.adminProduct.productState);
+    const totalPage = Math.ceil(listProduct.pagination.totalPage);
     const handleOnchange = (e) => {
         const value = e.target.value;
         setNewTodoValue({...newTodoValue, [e.target.name]: value});
@@ -68,7 +70,9 @@ function AddProducts() {
             message:`Thêm thành công`
         })
     }
-    const toggle = () => setAddProduct(!addProduct);
+    const toggle = () => {
+        navigate(`/admin/products/all?page=${totalPage}&limit=${PRODUCT_LIMIT}`)
+    };    
     return ( 
         <div className="add-products">
                 <h2>Add Products <span className="close-add" onClick={toggle}>X</span></h2>

@@ -20,7 +20,7 @@ export function Cancel() {
   
 
   
-  const listTitle = [ 'UserName','Phone', 'Address', 'ListOder','Count','Total','TotalBill','Date', 'Action' ]
+  const listTitle = [ 'UserName','Phone', 'Address', 'ListOder','Count','Price','TotalBill','Date', 'Action' ]
   return (
     <div className="delivered">
         {loading && <div style={{textAlign:'center'}}><LoadingOutlined /></div>}
@@ -68,7 +68,7 @@ export function Cancel() {
                     )
                   })}
                 </td>
-                <td>{item.totalBill}</td>
+                <td>{item.totalBill}.000đ</td>
                 <td>{item.date}</td>
                 <td>
                 </td>

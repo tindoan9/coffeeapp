@@ -28,6 +28,7 @@ export default function DetailCoffee() {
     const price = location.state.price
     const description = location.state.description
     const total = price * count + value.price * count
+    const type = location.state.type
 
     const increase = () => {
         setCount(count + 1);
@@ -46,7 +47,7 @@ export default function DetailCoffee() {
         setValue(e.target.value);
     };
 
-    const handleAddToCart = (image, productName, total, count, size) => {
+    const handleAddToCart = (image, productName, total, count, size, type) => {
         if(value === 0){
             notification.error({
                 message: `Bạn chưa chọn size!`,
@@ -59,7 +60,8 @@ export default function DetailCoffee() {
             productName: productName,
             total: total,
             count: count,
-            size: size
+            size: size,
+            type: type
             }
         dispatch(addToCartAction(cartItem))
         }
@@ -109,7 +111,7 @@ export default function DetailCoffee() {
                                 </Radio.Group>
                             </div>
                         </div>
-                        <button onClick={() => handleAddToCart(image, productName, total, count, value)}
+                        <button onClick={() => handleAddToCart(image, productName, total, count, value, type)}
                         >Thêm vào giỏ hàng - {total}.000đ
                         </button>
                     </div>

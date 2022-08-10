@@ -96,9 +96,10 @@ const productSlice = createSlice({
       }
     },
     deleteProductSuccess: (state, action) => {
+      const newData = state.productState.data.filter(item => item !== action.payload)
       state.productState = {
         ...state.productState,
-        data:action.payload,
+        data: newData,
         loading:false,
         pagination: {
           ...state.productState.pagination,

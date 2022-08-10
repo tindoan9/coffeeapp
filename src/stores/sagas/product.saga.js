@@ -6,8 +6,8 @@ import { fetchCategoryAction, fetchCategoryActionSuccess, fetchProductAction, fe
 function* fetchProduct(action) {
 	try {
 		yield delay(500)
-		const { page } = action.payload;
-		const response = yield ProductAPI.fetchProduct(page)
+		const { page, limit } = action.payload;
+		const response = yield ProductAPI.fetchProduct(page, limit)
 		const productData = response.data
 		const totalProduct = response.headers['x-total-count']
 
