@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { useSearchParams } from "react-router-dom";
-import { fetchProductAction, PRODUCT_LIMIT } from "store/slices/product.slice";
+import { fetchProductAction, PRODUCT_LIMIT } from "../../../../store/slices/product.slice";
 
 
 export function Delivering() {

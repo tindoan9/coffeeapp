@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 // import { TodoListContext} from "../../../App"
 import { Pagination } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "store/slices/product.slice";
+import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "../../../../store/slices/product.slice";
 import { useHook } from "Admin/hook/useHook";
 
 const tabs = ['all', 'coffee', 'fruit tea', 'cake'];

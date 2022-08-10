@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "store/slices/product.slice";
+import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "../../../../store/slices/product.slice";
 import { Pagination } from "antd";
 
 function FruitTea() {

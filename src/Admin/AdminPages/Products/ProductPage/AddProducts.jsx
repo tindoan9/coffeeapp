@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProductItem } from "store/slices/product.slice";
+import { addProductItem } from "../../../../store/slices/product.slice";
 import {v4} from "uuid";
 function AddProducts() {
     const [addProduct, setAddProduct] = useState(false);

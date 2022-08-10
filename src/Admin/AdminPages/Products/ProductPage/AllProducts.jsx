@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "store/slices/product.slice";
+import { deleteProductAction, fetchProductAction, PRODUCT_LIMIT } from "../../../../store/slices/product.slice";
 import { Pagination } from "antd";
 
 function AllProducts() {
@@ -56,9 +56,9 @@ function AllProducts() {
                     {listProduct.data.map((item) => {
                         return (
                             <div >
-                                <div className="product-item" key={item.name} onClick={() => handleDetailItem(item)}>
+                                <div className="product-item" key={item.id} onClick={() => handleDetailItem(item)}>
                                     <img src={item.link} alt={item.name} /><br />
-                                    <p>{item.name}</p>
+                                    <p>{item.productName}</p>
                                     <p>{item.price}đ</p>
                                 </div>
 
