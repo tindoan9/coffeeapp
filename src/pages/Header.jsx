@@ -16,7 +16,7 @@ export default function Header(props) {
 		switch (location.pathname) {
 		case "/":
 			return <HomePage/>;
-		case "/Login":
+		case "/login":
 			return <Login/>;
 		case "/cart":
 			return <Cart/>;

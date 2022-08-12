@@ -16,7 +16,7 @@ const unauthenticatedMenu = [
   {
     key: "1",
     label: (
-      <NavLink to={"/Login"}>
+      <NavLink to={"/login"}>
         <p target="_blank" rel="noopener noreferrer">
           Đăng nhập
         </p>
