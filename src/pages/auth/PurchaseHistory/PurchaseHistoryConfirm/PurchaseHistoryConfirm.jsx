@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'antd';
 import { fetchOrderAction } from '../../../../stores/slices/cart.slice';
+import EmptyComp from '../EmptyData/Empty';
 
 
 export default function PurchaseHistoryConfirm() {
@@ -21,6 +22,8 @@ export default function PurchaseHistoryConfirm() {
     const handleOrderDetail = (item) => {
         navigate(`/order-list/detail${item.id}`, { state: { ...item } })
     }
+
+    // if(!data.status !== 'Chờ xác nhận') return <EmptyComp/>
 
     return (
         <>

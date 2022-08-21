@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../NavbarUser-Layout/components/NavBar/NavBar';
+import CategoryHeader from './components/CategoryHeader';
 import FooterCbn from '../../../pages/HomePage/Footer/Footer';
 
-NavBarLayout.propTypes = {
+CategoryLayout.propTypes = {
     children: PropTypes.element,
   };
 
-export default function NavBarLayout(props) {
+export default function CategoryLayout(props) {
     const { children } = props;
     return (
         <>
             <NavBar/>
+            <CategoryHeader/>
             {children}
             <FooterCbn/>
         </>

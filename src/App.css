@@ -1,7 +1,7 @@
 @import url('./components/layouts/NavbarUser-Layout/components/NavBar/style.css');
 @import url('./pages/HomePage/style.css');
-@import url('./pages/HomePage/ListProduct/style.css');
 @import url('./pages/HomePage/Footer/style.css');
+@import url('./pages/HomePage/ListProduct/style.css');
 @import url('./pages/DetailCoffee/style.css');
 @import url('./pages/auth/Login/style.css');
 @import url('./pages/auth/Cart/style.css');

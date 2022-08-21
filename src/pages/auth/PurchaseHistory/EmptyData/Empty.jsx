@@ -13,11 +13,10 @@ export default function EmptyComp() {
     }}
     description={
       <span>
-        Chưa có sản phẩm nào trong giỏ hàng
+        No Data
       </span>
     }
   >
-    <Button onClick={() => navigate(`/products/coffee`)} type="primary">Tiếp tục mua sắm</Button>
   </Empty>
         </div>
     )

@@ -1,10 +1,7 @@
 import React from "react";
-import LogoPage from "../../../../../assets/logo-page.png";
+import LogoPage from "../../../../../assets/logo.174bdfd.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { BiUserCircle } from "react-icons/bi";
-import { GrUserAdmin } from "react-icons/gr";
-import { BsSearch } from "react-icons/bs";
-import { category } from "./category";
+import {UserOutlined, SearchOutlined, DashboardOutlined} from '@ant-design/icons';
 import { Button, Drawer, Dropdown, Menu, Space, Badge } from "antd";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,14 +49,20 @@ const urlDashboard = (
   <>
     <Button
       style={{
-        fontSize: "28px",
         background: "none",
         border: "none",
-        color: "black",
       }}
     >
-        <NavLink to={'/dashboard'}>
-            <GrUserAdmin />
+        <NavLink to={'/dashboard'}  style={{
+                fontSize: "20px",
+                color: "black",
+                padding: '7px 10px',
+                background: '#fff',
+                borderRadius: '30px'
+              }}>
+            <DashboardOutlined 
+              
+            />
         </NavLink>
       
     </Button>
@@ -123,19 +126,16 @@ export default function NavBar() {
             <NavLink to={"/"}>
               <li>Trang chủ</li>
             </NavLink>
-            <li className="menu">
-              Sản phẩm
-              <ul className="category">
-                {category.map((item, index) => (
-                  <NavLink to={item.path} key={index}>
-                    <li>{item.title}</li>
-                  </NavLink>
-                ))}
-              </ul>
-            </li>
+            <NavLink to={'/products/coffee'}>
+              <li>Sản phẩm</li>
+            </NavLink>
             <NavLink to={"/cart"}>
               <Badge count={cartItem}>
-                <li>Giỏ hàng</li>
+                <li 
+                style={{
+                  padding: '5px 0'
+                }} 
+                >Giỏ hàng</li>
               </Badge>
             </NavLink>
           </ul>
@@ -144,15 +144,21 @@ export default function NavBar() {
           {urlAdmin}
           <Button
             style={{
-              fontSize: "28px",
               background: "none",
               border: "none",
-              color: "black",
             }}
             type="primary"
             onClick={showDrawer}
           >
-            <BsSearch />
+            <SearchOutlined
+              style={{
+                fontSize: "20px",
+                color: "black",
+                padding: '7px 10px',
+                background: '#fff',
+                borderRadius: '60px'
+              }}
+            />
           </Button>
           <Drawer
             title="Search"
@@ -186,13 +192,19 @@ export default function NavBar() {
               <Dropdown overlay={<Menu items={menuList} />} placement="bottom">
                 <Button
                   style={{
-                    fontSize: "30px",
-                    background: "none",
-                    border: "none",
-                    color: "black",
+                    background: 'none',
+                    border: 'none'
                   }}
                 >
-                  <BiUserCircle />
+                  <UserOutlined 
+                    style={{
+                      fontSize: "20px",
+                      color: "black",
+                      padding: '7px 10px',
+                      background: '#fff',
+                      borderRadius: '60px'
+                    }}
+                  />
                 </Button>
               </Dropdown>
             </Space>

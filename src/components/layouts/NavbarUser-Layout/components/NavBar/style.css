@@ -1,39 +1,39 @@
 header{
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px;
+	background-color: #FEB139;
 }
-
 .logo{
-	cursor: pointer;
 	width: 220px;
 	object-fit: cover;
+	margin: 40px 30px;
 }
 .nav__links{
 	background-color: #FFFFFF;
 	padding: 10px 50px;
 	border-radius: 40px;
-	box-shadow: 5px 50px 90px 0.001px #333;
 	list-style: none;
 	align-items: center;
 	height: 49px;
 }
 .nav__links .active li{
 	color: #EF5B0C;
+	border-bottom: 2px solid #EF5B0C;
 }
 .nav__links li{
 	font-size: 18px;
 	font-weight: bolder;
 	color: black;
 	display: inline-block;
-	padding: 0 20px;
+	margin: 0 20px;
 }
-.nav__links li a{
-	transition: all 0.3s ease 0s;
+.nav__links li:hover{
+	border-bottom: 2px solid #EF5B0C;
+	transition: all 0.1s ease 0s;
 }
 .category{
 	display: none;
@@ -43,15 +43,8 @@ header{
 	padding: 20px 10px;
 	border-radius: 20px;
 }
-.category li{
-	display: block;
-	margin: 10px;
-}
-.menu:hover .category{
-	display: block;
-}
 .icons{
-	margin-right: 50px;
+	margin-right: 59px;
 }
 .login{
 	font-size: 35px;

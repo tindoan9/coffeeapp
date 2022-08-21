@@ -16,15 +16,15 @@ const layout = {
   },
 };
 
-const emailRegex =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+// const emailRegex =
+  // /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 const schema = yup
   .object({
     email: yup
       .string()
       .required("Vui lòng nhập đúng Email!")
-      .matches(emailRegex),
+      .matches('@gmail.com'),
     password: yup
       .string()
       .min(5, "Mật khẩu không phải trên 5 ký tự!")

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { fetchCategoryAction } from '../../../stores/slices/product.slice'
 
-export default function Coffee() {
+export default function FruitTea() {
     const productState = useSelector(state => state.product.productState)
 	const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -23,7 +23,7 @@ export default function Coffee() {
             <div className='category__form'>
                 <div className='list__category'>
                     {category?.map?.((item) => {
-                        if(item.type === "coffee"){
+                        if(item.type === "fruit tea"){
                             return <div onClick={() => handleCoffeeDetail(item)} key={item.id} className="item__category">
                                         <img src={item.image} alt="" />
                                         <p>{item.productName}</p>

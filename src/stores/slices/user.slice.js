@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { notification } from 'antd';
 
+
 const USER_INFO_KEY = 'USER_INFO';
 
 const userInfoFromStorage = localStorage.getItem(USER_INFO_KEY) ? JSON.parse(localStorage.getItem(USER_INFO_KEY)) : null;

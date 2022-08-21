@@ -32,3 +32,24 @@
 	position: absolute;
 	transform: translate(340px, -350px);
 }
+.footer__content {
+	position: absolute;
+	transform: translate(100px, -240px);
+}
+.footer__content .list__content {
+	display: flex;
+	justify-content: start;
+	
+}
+.footer__content .list__content .hotline,.address{
+	width: 300px;
+	color: #fff;
+}
+.footer__active{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #222;
+	padding: 8px 20px;
+	color: #fff;
+}

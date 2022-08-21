@@ -9,6 +9,7 @@ import OrderDetail from '../pages/auth/PurchaseHistory/OrderDetail/OrderDetail';
 import PurchaseHistory from '../pages/auth/PurchaseHistory/PurchaseHistory';
 import DetailCoffee from '../pages/DetailCoffee/DetailCoffee';
 import Header from '../pages/Header';
+import CategoryProduct from '../pages/products/CategoryProduct';
 
 
 export function CoffeeApp() {
@@ -21,8 +22,8 @@ export function CoffeeApp() {
 					<Route path='/Login' element={<Header/>}></Route>
 					<Route path='/cart' element={<Header/>}></Route>
 					<Route path='/profile' element={<Header/>}></Route>
-					<Route path='/other-category' element={<Header/>}></Route>
-					<Route path='/coffee' element={<Header/>}></Route>
+					<Route path='/products/coffee' element={<CategoryProduct/>}></Route>
+					<Route path='/products/tra-trai-cay-tra-sua' element={<CategoryProduct/>}></Route>
 					<Route path='/register' element={<Header/>}></Route>
 					<Route path='/cart/success/:id' element={<Success/>}></Route>
 					<Route path='/order-list/detail:id' element={<OrderDetail></OrderDetail>}></Route>

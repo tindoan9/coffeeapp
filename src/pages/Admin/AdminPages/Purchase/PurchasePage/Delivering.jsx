@@ -3,6 +3,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { ConfirmOrderAction, fetchOrderAdminAction } from "../../../../../stores/slices/admin.cart.slice";
+import { notification } from "antd";
 
 
 export function Delivering() {
@@ -19,9 +20,15 @@ export function Delivering() {
 
   const handleDeliveredOrder = (item) => {
     dispatch(ConfirmOrderAction({...item, status:'Đã nhận'}));
+    notification.success({
+      message:`Đã nhận đơn hàng!`
+  })
 }
 const handleCancelOrder = (item) => {
     dispatch(ConfirmOrderAction({...item, status:'Đã hủy'}));
+    notification.success({
+      message:`Đã hủy đơn hàng!`
+  })
 }
 
 

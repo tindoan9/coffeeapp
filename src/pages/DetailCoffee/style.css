@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 850px;
+	height: 165vh;
 }
 .item__detail .product__detail{
 	display: flex;
