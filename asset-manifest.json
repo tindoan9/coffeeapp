@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/coffeeapp/static/css/main.fe2082d5.css",
+    "main.js": "/coffeeapp/static/js/main.24454985.js",
+    "static/js/787.1303a375.chunk.js": "/coffeeapp/static/js/787.1303a375.chunk.js",
+    "static/media/banner1.jpg": "/coffeeapp/static/media/banner1.81cb0bf2ef18e16fc1dc.jpg",
+    "static/media/banner3.jpg": "/coffeeapp/static/media/banner3.8f36415f8a653e57a6dc.jpg",
+    "static/media/banner2.jpg": "/coffeeapp/static/media/banner2.fcdeb4a70c1e4b7152f6.jpg",
+    "static/media/banner4.jpg": "/coffeeapp/static/media/banner4.f9986662b2f2c1d908b5.jpg",
+    "static/media/coffee-blue.jpg": "/coffeeapp/static/media/coffee-blue.f13ad256b15de861bd9b.jpg",
+    "static/media/read-content.jpg": "/coffeeapp/static/media/read-content.944efddde97e9f3d4818.jpg",
+    "static/media/footer.jpg": "/coffeeapp/static/media/footer.95aab1493495f40f3086.jpg",
+    "static/media/logo.174bdfd.svg": "/coffeeapp/static/media/logo.174bdfd.174bdfd78ec7b9f93d2583498e2b4ad5.svg",
+    "index.html": "/coffeeapp/index.html",
+    "static/media/antd.less": "/coffeeapp/static/media/antd.7affb7a1925b6ab47ea6.less",
+    "main.fe2082d5.css.map": "/coffeeapp/static/css/main.fe2082d5.css.map",
+    "main.24454985.js.map": "/coffeeapp/static/js/main.24454985.js.map",
+    "787.1303a375.chunk.js.map": "/coffeeapp/static/js/787.1303a375.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe2082d5.css",
+    "static/js/main.24454985.js"
+  ]
+}
