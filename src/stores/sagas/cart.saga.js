@@ -5,7 +5,6 @@ import { cancelOrderAction, cancelOrderFailedAction, cancelOrderSuccessAction, f
 
 function* onlPayment(action){
     try {
-        yield delay(500)
         const bill = action.payload
         const response = yield CartAPI.onlPayment({
             id: bill.id,

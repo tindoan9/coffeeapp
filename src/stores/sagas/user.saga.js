@@ -17,6 +17,7 @@ import { AuthAPI, UserAPI } from '../../api';
 
 function* login(action) {
     try {
+        yield delay(2000)
         const loginPayload = action.payload
         const response = yield AuthAPI.login({
             email: loginPayload.email,
@@ -30,14 +31,16 @@ function* login(action) {
 
 function* register(action) {
     try {
+        yield delay(2000)
         const registerPayload = action.payload
         const response = yield AuthAPI.register({
-            email: registerPayload.email,
-            password: registerPayload.password,
+            email: registerPayload.values.email,
+            password: registerPayload.values.password,
+            decentralization: registerPayload.decentralization
         });
         yield put(registerActionSuccess(response.data.user));
     } catch (e) {
-        yield put(registerActionFailed(e.response.data));
+        yield put(registerActionFailed(e.response));
     }
 }
 
@@ -46,13 +49,15 @@ function* updateUser(action) {
         yield delay(500)
         const updateUserInfo = action.payload
         const response = yield UserAPI.updateUser({
-            name: updateUserInfo.name,
-            phone: updateUserInfo.phone,
-            address: updateUserInfo.address
-        })
-        yield put(updateUserInfoActionSuccess(response.data.user))
+            name: updateUserInfo.values.name,
+            email: updateUserInfo.values.email,
+            phone: updateUserInfo.values.phone,
+            address: updateUserInfo.values.address,
+            decentralization: updateUserInfo.decentralization
+        }, updateUserInfo.userID)
+        yield put(updateUserInfoActionSuccess(response.data))
     } catch (error) {
-        yield put(updateUserInfoActionFailed(error.response.data))
+        yield put(updateUserInfoActionFailed(error.response))
     }
 }
 

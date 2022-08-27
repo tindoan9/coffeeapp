@@ -15,8 +15,6 @@ const initialState = {
     },
 }
 
-export const USER_ID = userInfoFromStorage
-
 const userSlice = createSlice({
     name: 'user',
     initialState,
@@ -91,8 +89,7 @@ const userSlice = createSlice({
             }
         },
         updateUserInfoAction(state, action) {
-            const userInfoUpdate = {...action.payload}
-            localStorage.setItem(USER_INFO_KEY, JSON.stringify(userInfoUpdate))
+            localStorage.removeItem(USER_INFO_KEY)
             state.userInfoState = {
                 ...state.userInfoState,
                 loading: true
@@ -102,7 +99,8 @@ const userSlice = createSlice({
             notification.success({
                 message: `Cập nhật thành công!`,
             });
-            const userInfoUpdate = {...action.payload}           
+            const userInfoUpdate = action.payload  
+            localStorage.setItem(USER_INFO_KEY, JSON.stringify(userInfoUpdate))
             state.userInfoState = {
                 ...state.userInfoState,
                 data: userInfoUpdate,

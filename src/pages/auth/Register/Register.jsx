@@ -16,9 +16,6 @@ const layout = {
   },
 };
 
-// const emailRegex =
-  // /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
 const schema = yup
   .object({
     email: yup
@@ -37,12 +34,13 @@ const schema = yup
   .required();
 
 export default function Register() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const decentralization = 'member'
+  
   const onFinish = (values) => {
-    dispatch(registerAction(values));
+    dispatch(registerAction({values, decentralization}));
     navigate(`/login`);
   };
 
