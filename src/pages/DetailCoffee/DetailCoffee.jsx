@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { notification, Radio, Button} from 'antd';
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
@@ -21,7 +21,7 @@ export default function DetailCoffee() {
     const [count, setCount] = useState(1);
     const location = useLocation()
     const dispatch = useDispatch()
-    
+
     const { id } = useParams()
     const image = location.state.image
     const productName = location.state.productName
@@ -54,16 +54,16 @@ export default function DetailCoffee() {
             });    
         }else{
             const cartItem = {
-                id: v4(),
-                idProduct: id,
-                image: image,
-                productName: productName,
-                total: total,
-                count: count,
-                size: size,
-                type: type
+            id: v4(),
+            idProduct: id,
+            image: image,
+            productName: productName,
+            total: total,
+            count: count,
+            size: size,
+            type: type
             }
-            dispatch(addToCartAction(cartItem))
+        dispatch(addToCartAction(cartItem))
         }
         
     }

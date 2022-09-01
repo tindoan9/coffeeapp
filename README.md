@@ -1,17 +1,4 @@
-# Một số hình ảnh website
-<img width="960" alt="2022-08-23" src="https://user-images.githubusercontent.com/85912713/186065924-018b5db4-a61c-4f51-bbb0-8f4a9ea518bb.png">
-
-<img width="960" alt="2022-08-23 (1)" src="https://user-images.githubusercontent.com/85912713/186065928-5a8391a6-9102-45c1-8f47-8b34c4c02d3e.png">
-
-<img width="960" alt="2022-08-23 (3)" src="https://user-images.githubusercontent.com/85912713/186065938-a3a2cb58-f83a-419b-9123-15471672afd6.png">
-
-<img width="960" alt="2022-08-23 (4)" src="https://user-images.githubusercontent.com/85912713/186065957-bf33d436-5cda-499f-8681-e96b17a22f22.png">
-
-<img width="960" alt="2022-08-23 (5)" src="https://user-images.githubusercontent.com/85912713/186065966-1acf4860-8a97-494c-8633-515ef8befbfc.png">
-
-<img width="960" alt="2022-08-23 (6)" src="https://user-images.githubusercontent.com/85912713/186065973-4430829d-40de-4e53-bca5-e930e89b8826.png">
-
-## Getting Started with Create React App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

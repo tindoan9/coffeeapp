@@ -63,7 +63,6 @@ function* cancelOrder(action) {
 
 function* StatusOrder(action) {
     try {
-        yield delay(500);
         const ItemOrder = action.payload
         const response = yield CartAPI.cancelOrder(ItemOrder.id, {status: ItemOrder.status});        
         

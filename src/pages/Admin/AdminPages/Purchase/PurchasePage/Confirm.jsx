@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { ConfirmOrderAction, fetchOrderAdminAction } from "../../../../../stores/slices/admin.cart.slice";
-import { notification } from "antd";
 
 
 export function Confirm() {
@@ -21,15 +20,9 @@ export function Confirm() {
 
   const handleConfirmOrder = (item) => {
       dispatch(ConfirmOrderAction({...item, status:'Đang giao'}));
-      notification.success({
-        message:`Đã xác nhận đơn hàng!`
-    })
   }
   const handleCancelOrder = (item) => {
       dispatch(ConfirmOrderAction({...item, status:'Đã hủy'}));
-      notification.success({
-        message:`Đã hũy đơn hang!`
-    })
   }
 
    

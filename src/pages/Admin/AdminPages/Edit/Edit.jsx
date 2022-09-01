@@ -55,7 +55,7 @@ function Edit() {
     const hanldeSubmitEditValue = (e) => {
         const list = {...newValueEdit, id:param.id, image:urlImage? urlImage: location.state.image}
         dispatch(updateProductAction(list));
-        navigate(`/admin/products?page=${page_}&limit=10`)   
+        navigate(`/admin/products?page=${page_}&limit=10`)    
     }
 
     const hanldeReset = () => {

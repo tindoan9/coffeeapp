@@ -17,7 +17,7 @@ export default function EmptyComp() {
       </span>
     }
   >
-    <Button onClick={() => navigate(`/products/coffee`)} type="primary">Tiếp tục mua sắm</Button>
+    <Button onClick={() => navigate(`/`)} type="primary">Tiếp tục mua sắm</Button>
   </Empty>
         </div>
     )

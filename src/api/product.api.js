@@ -1,4 +1,3 @@
-import { PRODUCT_LIMIT } from '../stores/slices/product.slice'
 import {API, URL_API} from './const.api'
 
 export const ProductAPI = {
