@@ -7,14 +7,13 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 const schema = yup
     .object({
-        email: yup.string().required("Vui lòng nhập đúng Email!").matches(emailRegex),
+        email: yup.string().required("Vui lòng nhập đúng Email!").matches('@gmail.com'),
         password: yup
             .string()
-            .min(5, "Mật khẩu phải ít nhất 5 kí tự!")
+            .min(8, "Mật khẩu phải ít nhất 8 kí tự!")
             .required("Password is required"),
     })
     .required();

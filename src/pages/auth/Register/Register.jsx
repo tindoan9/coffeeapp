@@ -16,18 +16,15 @@ const layout = {
   },
 };
 
-const emailRegex =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
 const schema = yup
   .object({
     email: yup
       .string()
       .required("Vui lòng nhập đúng Email!")
-      .matches(emailRegex),
+      .matches('@gmail.com'),
     password: yup
       .string()
-      .min(5, "Mật khẩu không phải trên 5 ký tự!")
+      .min(8, "Mật khẩu không phải trên 8 ký tự!")
       .required("Password is required"),
     confirmPassword: yup
       .string()
@@ -37,12 +34,13 @@ const schema = yup
   .required();
 
 export default function Register() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const decentralization = 'member'
+  
   const onFinish = (values) => {
-    dispatch(registerAction(values));
+    dispatch(registerAction({values, decentralization}));
     navigate(`/login`);
   };
 

@@ -31,7 +31,6 @@ function* login(action) {
 
 function* register(action) {
     try {
-        yield delay(2000)
         const registerPayload = action.payload
         const response = yield AuthAPI.register({
             email: registerPayload.values.email,
@@ -46,7 +45,6 @@ function* register(action) {
 
 function* updateUser(action) {
     try {
-        yield delay(500)
         const updateUserInfo = action.payload
         const response = yield UserAPI.updateUser({
             name: updateUserInfo.values.name,

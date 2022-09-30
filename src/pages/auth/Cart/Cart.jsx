@@ -82,7 +82,7 @@ export default function Cart() {
             <h2>Giao hàng</h2>
             <input
               type="text"
-              value={infoOrder.name}
+              value={infoOrder?.name}
               onChange={(e) =>
                 setInfoOrder({
                   ...infoOrder,
@@ -92,7 +92,7 @@ export default function Cart() {
             />
             <input
               type="number"
-              value={infoOrder.phone}
+              value={infoOrder?.phone}
               onChange={(e) =>
                 setInfoOrder({
                   ...infoOrder,
@@ -102,7 +102,7 @@ export default function Cart() {
             />
             <input
               type="text"
-              value={infoOrder.address}
+              value={infoOrder?.address}
               onChange={(e) =>
                 setInfoOrder({
                   ...infoOrder,
